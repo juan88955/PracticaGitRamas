@@ -1,0 +1,18 @@
+.circulo {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 50%;
+}
+
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    background-color: #d3d00d;
+}
+
+.rectangulo {
+    width: 200px;
+    height: 100px;
+    background-color: #cc2e7d;
+}
