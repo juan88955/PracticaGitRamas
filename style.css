@@ -26,3 +26,15 @@
 h3{
     color: pink;
 }
+
+.hexagono {
+    width: 100px;
+    height: 100px;
+    background-color: #0deded;
+}
+
+.pentagono {
+    width: 100px;
+    height: 100px;
+    background-color: #ff0000;
+}
