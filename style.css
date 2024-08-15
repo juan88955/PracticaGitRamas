@@ -1,44 +1,10 @@
-.circulo {
+.circulo, .cuadrado, .rectangulo, .rombo, .hexagono, .pentagono {
     width: 100px;
     height: 100px;
-    background-color: #3498db;
-    border-radius: 50%;
-}
-
-.cuadrado {
-    width: 100px;
-    height: 100px;
-    background-color: #d3d00d;
+    margin: 10px auto;
+    background-color: #007bff;
 }
 
 .rectangulo {
-    width: 200px;
-    height: 100px;
-    background-color: #cc2e7d;
-}
-
-.rombo {
-    width: 100px;
-    height: 100px;
-    background-color: #2ecc71;
-}
-
-h3{
-    color: pink;
-}
-
-p{
-    color:#cc2e7d;
-}
-
-.hexagono {
-    width: 100px;
-    height: 100px;
-    background-color: #0deded;
-}
-
-.pentagono {
-    width: 100px;
-    height: 100px;
-    background-color: #ff0000;
+    width: 150px;
 }
