@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Git Ramas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="shortcut icon" href="./assets/css/img/favicon.ico" type="image/x-icon">
-    <title>Practica Git Ramas</title>
 </head>
 <body class="d-flex flex-column min-vh-100 layout">
     <header class="container text-center my-4">
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item"><a href="https://music.youtube.com/watch?v=L5joywlq9B4&si=_Y2FD-M_bPOU9Len" id="link1" class="nav-link">youtube</a></li>
-                <li class="nav-item"><a href="https://music.youtube.com/watch?v=zNVo24P_KLU&si=5iZ0O0zl0cd6dzhj" id="link2" class="nav-link">youtube</a></li>
+        <nav id="navDinamico">
+            <ul id="listaNav" class="nav justify-content-center">
             </ul>
-            <div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </div>
         </nav>
-        <p id="greeting" class="mt-3">hola soy chispa de argentina</p>
-        <a class="fs-2 text-dark " href="https://66c07fc951ea824f996ba2d0--teal-gumption-ca80a6.netlify.app/">MiSitio Gabriel</a>
+        <button id="agregarElementoNav" class="btn btn-primary mt-2">Agregar Elemento de Navegación</button>
     </header>
+
     <main class="container text-center flex-grow-1">
         <h1 class="mb-4">Practica Git Ramas</h1>
         <div class="row justify-content-center">
@@ -35,12 +30,15 @@
             <div class="col-md-2 m-2"><div class="pentagono" id="pentagono"></div></div>
         </div>
         <div id="shapeDos" class="row justify-content-center"></div>
+        <section id="shapeTres" class="row justify-content-center"></section>
     </main>
+
     <footer class="container text-center mt-4">
         <h3>creado por Gabriel</h3>
         <h2>creado por el grupo 1</h2>
         <h3>grupo</h3>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
 </body>

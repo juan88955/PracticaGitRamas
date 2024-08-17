@@ -1,3 +1,56 @@
+const elementosNav = [
+    { href: "https://music.youtube.com/watch?v=L5joywlq9B4", texto: "YouTube 1" },
+    { href: "https://music.youtube.com/watch?v=zNVo24P_KLU", texto: "YouTube 2" },
+    { href: "https://66c07fc951ea824f996ba2d0--teal-gumption-ca80a6.netlify.app/", texto: "MiSitio Gabriel" },
+    { href: "https://github.com/juan88955/PracticaGitRamas.git", texto: "Enlace GIT" }
+];
+
+let indiceNavActual = 0;
+
+function actualizarNav() {
+    const listaNav = document.getElementById('listaNav');
+    listaNav.innerHTML = ''; // Limpiar elementos de navegación actuales
+
+    // Agregar tres elementos de navegación, comenzando desde indiceNavActual
+    for (let i = 0; i < 3; i++) {
+        const indice = (indiceNavActual + i) % elementosNav.length;
+        const elemento = elementosNav[indice];
+        
+        const li = document.createElement('li');
+        li.className = 'nav-item';
+
+        const a = document.createElement('a');
+        a.href = elemento.href;
+        a.className = 'nav-link';
+        a.textContent = elemento.texto;
+
+        li.appendChild(a);
+        listaNav.appendChild(li);
+    }
+
+    indiceNavActual = (indiceNavActual + 1) % elementosNav.length;
+}
+
+function agregarNuevoElementoNav() {
+    const nuevoTexto = prompt("Introduce el texto para el nuevo elemento de navegación:");
+    const nuevoHref = prompt("Introduce la URL para el nuevo elemento de navegación:");
+    
+    if (nuevoTexto && nuevoHref) {
+        elementosNav.push({ href: nuevoHref, texto: nuevoTexto });
+        actualizarNav(); // Refrescar la navegación para mostrar el nuevo elemento
+    }
+}
+
+// Actualizar nav cada 5 segundos
+setInterval(actualizarNav, 5000);
+
+// Actualización inicial de nav
+actualizarNav();
+
+// Agregar event listener para el botón "Agregar Elemento de Navegación"
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('agregarElementoNav').addEventListener('click', agregarNuevoElementoNav);
+});
 document.addEventListener('DOMContentLoaded', function() {
     const greeting = document.getElementById('greeting');
     greeting.addEventListener('click', function() {
@@ -53,3 +106,28 @@ document.addEventListener('DOMContentLoaded', function () {
     renderShapeDos(pageElement);
 });
 
+function addDynamicShapes() {
+    const shapeTres = document.getElementById('shapeTres');
+    const shapes = ['triangle', 'diamond', 'star'];
+    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1'];
+
+    shapes.forEach((shape, index) => {
+        const div = document.createElement('div');
+        div.className = `col-md-2 m-2`;
+        
+        const shapeDiv = document.createElement('div');
+        shapeDiv.className = shape;
+        shapeDiv.style.backgroundColor = colors[index];
+        shapeDiv.style.width = '100px';
+        shapeDiv.style.height = '100px';
+        
+        div.appendChild(shapeDiv);
+        shapeTres.appendChild(div);
+
+        shapeDiv.addEventListener('click', () => {
+            shapeDiv.style.transform = shapeDiv.style.transform === 'scale(1.2)' ? 'scale(1)' : 'scale(1.2)';
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', addDynamicShapes);
