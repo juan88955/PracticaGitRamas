@@ -9,9 +9,8 @@ let indiceNavActual = 0;
 
 function actualizarNav() {
     const listaNav = document.getElementById('listaNav');
-    listaNav.innerHTML = ''; // Limpiar elementos de navegación actuales
+    listaNav.innerHTML = '';
 
-    // Agregar tres elementos de navegación, comenzando desde indiceNavActual
     for (let i = 0; i < 3; i++) {
         const indice = (indiceNavActual + i) % elementosNav.length;
         const elemento = elementosNav[indice];
@@ -37,17 +36,14 @@ function agregarNuevoElementoNav() {
     
     if (nuevoTexto && nuevoHref) {
         elementosNav.push({ href: nuevoHref, texto: nuevoTexto });
-        actualizarNav(); // Refrescar la navegación para mostrar el nuevo elemento
+        actualizarNav();
     }
 }
 
-// Actualizar nav cada 5 segundos
 setInterval(actualizarNav, 5000);
 
-// Actualización inicial de nav
 actualizarNav();
 
-// Agregar event listener para el botón "Agregar Elemento de Navegación"
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('agregarElementoNav').addEventListener('click', agregarNuevoElementoNav);
 });
