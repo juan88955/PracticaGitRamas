@@ -57,5 +57,5 @@ main {
 .squareGrow {
     transform: scale(1.3);
     z-index: 1;
-    border: 2px solid red;
+    border: 2px solid rgb(0, 4, 255);
 }
