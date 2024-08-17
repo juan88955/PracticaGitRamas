@@ -1,0 +1,35 @@
+main {
+    background-color: rgb(236, 164, 77);
+}
+.cuadrado, .hexagono {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    background-color: #007bff;
+}
+
+.pentagono{
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    background-color: #87fe00;
+}
+
+.rombo{
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    background-color: #000000;}
+
+.rectangulo {
+    width: 150px;
+    height: 100px;
+    margin: 10px auto;
+    background-color: #ff0000;  
+}
+
+.circulo{
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    background-color: #ff00f7;}
