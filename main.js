@@ -23,6 +23,9 @@ function actualizarNav() {
         a.className = 'nav-link';
         a.textContent = elemento.texto;
 
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer'; 
+
         li.appendChild(a);
         listaNav.appendChild(li);
     }
@@ -47,6 +50,7 @@ actualizarNav();
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('agregarElementoNav').addEventListener('click', agregarNuevoElementoNav);
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const greeting = document.getElementById('greeting');
     greeting.addEventListener('click', function() {
@@ -127,3 +131,16 @@ function addDynamicShapes() {
 }
 
 document.addEventListener('DOMContentLoaded', addDynamicShapes);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const circles = document.querySelectorAll('.circle');
+
+    circles.forEach(circle => {
+        circle.addEventListener('mouseover', function() {
+            this.classList.add('enlarge');
+        });
+        circle.addEventListener('mouseout', function() {
+            this.classList.remove('enlarge');
+        });
+    });
+});
