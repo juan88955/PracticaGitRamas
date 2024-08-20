@@ -11,7 +11,7 @@ function actualizarNav() {
     const listaNav = document.getElementById('listaNav');
     listaNav.innerHTML = '';
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < elementosNav.length; i++) {
         const indice = (indiceNavActual + i) % elementosNav.length;
         const elemento = elementosNav[indice];
         
@@ -47,26 +47,25 @@ setInterval(actualizarNav, 5000);
 
 actualizarNav();
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('agregarElementoNav').addEventListener('click', agregarNuevoElementoNav);
-});
 
 document.addEventListener('DOMContentLoaded', function() {
-    const greeting = document.getElementById('greeting');
-    greeting.addEventListener('click', function() {
-        this.textContent = '¡Hola! Ahora soy interactivo.';
+    document.getElementById('agregarElementoNav').addEventListener('click', agregarNuevoElementoNav);
+
+
+    const shapes = ["circle", 'cuadrado', 'rectangulo', 'rombo', 'hexagono', 'pentagono'];
+    
+    shapes.forEach(shape => {
+        const elements = document.getElementsByClassName(shape);
+        Array.from(elements).forEach(element => {
+            element.addEventListener('mouseover', function() {
+                this.style.backgroundColor = getRandomColor();
+            });
+            element.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '';
+            });
+        });
     });
 
-    const shapes = ['circulo', 'cuadrado', 'rectangulo', 'rombo', 'hexagono', 'pentagono'];
-    shapes.forEach(shape => {
-        const element = document.getElementById(shape);
-        element.addEventListener('mouseover', function() {
-            this.style.backgroundColor = getRandomColor();
-        });
-        element.addEventListener('mouseout', function() {
-            this.style.backgroundColor = '';
-        });
-    });
 
     const links = document.querySelectorAll('nav a');
     links.forEach(link => {
@@ -76,10 +75,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function getRandomColor() {
-        return '#' + Math.floor(Math.random()*16777215).toString(16);
-    }
+    
+
+    const pageElement = document.getElementById('shapeDos');
+    renderShapeDos(pageElement);
+
+    addDynamicShapes()
+
+
+    const circles = document.querySelectorAll('.circle');
+
+    circles.forEach(circle => {
+        circle.addEventListener('mouseover', function() {
+            this.classList.add('enlarge');
+        });
+        circle.addEventListener('mouseout', function() {
+            this.classList.remove('enlarge');
+        });
+    });
 });
+
+function getRandomColor() {
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
 
 function renderShapeDos(page) {
     page.innerHTML = '';
@@ -101,10 +119,6 @@ function renderShapeDos(page) {
     };
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const pageElement = document.getElementById('shapeDos');
-    renderShapeDos(pageElement);
-});
 
 function addDynamicShapes() {
     const shapeTres = document.getElementById('shapeTres');
@@ -129,18 +143,3 @@ function addDynamicShapes() {
         });
     });
 }
-
-document.addEventListener('DOMContentLoaded', addDynamicShapes);
-
-document.addEventListener('DOMContentLoaded', function() {
-    const circles = document.querySelectorAll('.circle');
-
-    circles.forEach(circle => {
-        circle.addEventListener('mouseover', function() {
-            this.classList.add('enlarge');
-        });
-        circle.addEventListener('mouseout', function() {
-            this.classList.remove('enlarge');
-        });
-    });
-});
